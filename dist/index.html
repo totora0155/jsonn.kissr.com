@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]> <html lang="ja" class="no-js ie9 init"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="ja" class="no-js init" ng-app="Jsonn"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Jsonn">
+  <meta name="description" content="Jsonn">
+  <title>Jsonn</title>
+  <!-- <link rel="canonical" href=""> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!--[if lt IE 9]>
+    <script src="js/libs/html5shiv-3.7.0.js"></script>
+    <script src="js/libs/respond-1.3.0.js"></script>
+  <![endif]-->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js'></script>
+  <script src="js/jsonn2.js"></script>
+</head>
+<body class="layer">
+<!--[if lte IE 9]>
+  <div class="no-ie">お使いのブラウザのバージョンはサポート外です。<a href="http://www.google.com/chromeframe?hl=ja&prefersystemlevel=true">Chrome Frame</a>をダウンロード又は、<a href="http://browsehappy.com/">コチラ</a>にあるような最新のブラウザを使用してください。</div>
+<![endif]-->
+
+<!-- content -->
+<div id="content">
+  <tabs panes="panes">
+    <json-pane title="Json"></json-pane>
+    <result-pane title="Result"></result-pane>
+  </tab>
+</div>
+
+<!-- footer -->
+<footer id="footer" role="contentinfo">
+  <div class="sc_">
+    <ul class="sc-ul">
+      <li class="sc-li">
+        <dl class="sc-dl">
+           <dt class="sc-dt"><span class="sc-key">Alt + ←</span></dt>
+           <dd class="sc-dd">Jsonタブへ</dd>
+         </dl>
+      </li>
+      <li class="sc-li">
+        <dl class="sc-dl">
+           <dt class="sc-dt"><span class="sc-key">Alt + →</span></dt>
+           <dd class="sc-dd">Resultタブへ</dd>
+         </dl>
+      </li>
+    </ul>
+    <ul class="sc-ul">
+      <li class="sc-li">
+        <dl class="sc-dl">
+           <dt class="sc-dt"><span class="sc-key">Tab</span></dt>
+           <dd class="sc-dd">次の入力フォームへ</dd>
+         </dl>
+      </li>
+      <li class="sc-li">
+        <dl class="sc-dl">
+           <dt class="sc-dt"><span class="sc-key">Alt + n</span></dt>
+           <dd class="sc-dd">〃（値入力時）</dd>
+         </dl>
+      </li>
+    </ul>
+    <ul class="sc-ul">
+      <li class="sc-li">
+        <dl class="sc-dl">
+           <dt class="sc-dt"><span class="sc-key">Alt + h</span></dt>
+           <dd class="sc-dd">下の階層へ</dd>
+         </dl>
+      </li>
+      <li class="sc-li">
+        <dl class="sc-dl">
+           <dt class="sc-dt"><span class="sc-key">Alt + l</span></dt>
+           <dd class="sc-dd">階層を戻す</dd>
+         </dl>
+      </li>
+    </ul>
+  </div>
+  <div class="help">
+    <dl>
+      <dt class="help-dt">最初
+      <dd class="help-dd">２行目のフォームから記述（自動で１行目が削除）<br>１行目消すとエラー
+    </dl>
+    <dl>
+      <dt class="help-dt">コピー
+      <dd class="help-dd">Resultタブへ移動、Ctrl+a → Ctrl+c
+    </dl>
+    <dl>
+      <dt class="help-dt">削除
+      <dd class="help-dd">キーの中身を削除
+    </dl>
+    <dl>
+      <dt class="help-dt">挿入
+      <dd class="help-dd">挿入したい位置の上にあるハッシュの空いている空間をクリック
+    </dl>
+    <dl>
+      <dt class="help-dt">配列
+      <dd class="help-dd">スペース区切りで記述
+    </dl>
+    <dl>
+      <dt class="help-dt">ハッシュ配列
+      <dd class="help-dd" style="text-decoration:line-through">キーに<span class="sc-key">[</span>を記述<br>
+        抜ける時は下の階層へ移動
+    </dl>
+  </div>
+  <small class="copylight">Jsonn</span></small>
+</footer>
+
+<!--
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src='//www.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+-->

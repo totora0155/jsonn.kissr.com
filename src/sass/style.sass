@@ -1,0 +1,290 @@
+@charset "utf-8"
+@import "common/_normalize"
+@import "diff/variable"
+// @import "common/font"
+// @import "common/mock"
+@import "common/function"
+@import "common/property"
+@import "common/decoration"
+@import "common/layout"
+@import "common/oo"
+@import "common/clipping"
+@import "diff/placeholder"
+
+// // IE
+// @if ie9
+//  .ie9 .ie9-grd
+//  filter: none
+
+
+=rf
+  a
+    color: inherit
+    text-decoration: none
+
+  .init
+    font-size: 62.5%
+
+  +selection(background rgba($accent, .4))
+
+=layer
+.layer
+  font: 15px/1.5 $base-font-family
+  color: $black
+  background: $base
+  position: relative
+  &:before
+    content: ''
+    display: inline-block
+    height: 1.4em
+    width: 2.4em
+    background: url(../img/ico.png) no-repeat
+    background-size: 34px 21px
+    position: absolute
+    top: 0.4em
+    left: 2.1em
+
+=layout
+  #content
+    counter-reset: json
+
+=tab
+  .tab-ul
+    @extend %clearfix
+    +user-select
+    list-style: none
+    color: mix($base, $sub, 50)
+    background: $sub
+    padding-left: 5em
+    margin-top: 0
+    border-bottom: 1px solid $black
+
+  .tab-li
+    float: left
+    text-align: center
+    &+&
+      margin-left: 1em
+
+  .tab-btn
+    display: inline-block
+    padding: .5em 0
+    width: 5em
+    &:hover
+      color: $base
+
+  .tab-act
+    color: $base
+    font-weight: bold
+    pointer-events: none
+
+=main
+  .main-Json .json-ol
+    display: block !important
+  .main-Result .result-ol
+    display: block !important
+
+=json
+  .json-ol
+    list-style: none
+    padding-left: 0
+    display: none
+
+  .json-li
+    padding-left: 6.3em
+    &:before
+      +user-select
+      display: inline-block
+      width: 1.6em
+      text-align: center
+      counter-increment: json
+      content: counter(json)
+      padding: .24em .75em .24em 0
+      border-right: 1px solid mix($base, $sub, 85)
+      margin-right: .75em
+    &:hover
+      background: mix($base, $sub, 85)
+      box-shadow: 0 12px 0 14px $base inset
+      text-shadow: 0 0 0 $black
+
+  .json-li-form
+    &:hover
+      box-shadow: 0 14px 0 14px $base inset
+
+  .json-li-err
+    box-shadow: 0 14px 0 14px $danger inset
+
+  .json-key
+    &:after
+      content: ' :  '
+    .json-array &:after
+      content: '' !important
+
+  .json-array > .json-key
+    position:relative
+    &:last-child:before
+      content: ']'
+
+  .json-parent
+    color: transparent
+    +user-select
+    text-shadow: none
+
+  .json-edit
+    outline: none
+
+  .json-new
+    width: 21em
+    background: $base
+    +split-bd(0 0 0 1px, solid, mix($base, $sub, 50))
+    outline: none
+    text-indent: .5em
+    &:focus
+      text-indent: 0
+      border-color: transparent
+
+  .json-new-key
+    left: -1.6em
+    text-indent: 1.5em
+  .json-layer1.json-new-key
+    position: relative
+    left: -1.15em
+
+  .json-new-val
+    width: 34em
+    +split-bd(0 1px 0 1px, solid, mix($base, $sub, 50))
+
+  @for $i from 1 through 20
+    .json-layer#{$i+1}
+      margin-left: $i * 2em
+      position: relative
+      &:before
+        content: ""
+        display: inline-block
+        height: 1.83em
+        width: 1em
+        border-left: 1px dotted mix($base, $sub, 50)
+        position: absolute
+        left: -1.6em
+
+
+
+=result
+  .result-ol
+    list-style: none
+    padding-left: 0
+    display: none
+
+  .result-li
+    padding-left: 6.3em
+    &:before
+      +user-select
+      display: inline-block
+      width: 1.6em
+      text-align: center
+      counter-increment: json
+      content: counter(json)
+      padding: .24em .75em .24em 0
+      border-right: 1px solid mix($base, $sub, 85)
+      margin-right: .75em
+    &:hover
+      background: mix($base, $sub, 85)
+      box-shadow: 0 12px 0 14px $base inset
+      text-shadow: 0 0 0 $black
+
+  .result-li-form
+    &:hover
+      box-shadow: 0 14px 0 14px $base inset
+
+  .result-li-err
+    box-shadow: 0 14px 0 14px $danger inset
+
+  .result-key
+    &:after
+      content: ' :  '
+
+  .result-parent
+    color: transparent
+    +user-select
+    text-shadow: none
+
+  .result-edit
+    outline: none
+
+  .result-new
+    width: 21em
+    background: $base
+    +split-bd(0 0 0 1px, solid, mix($base, $sub, 50))
+    outline: none
+    text-indent: .5em
+    &:focus
+      text-indent: 0
+      border-color: transparent
+
+  .result-new-val
+    width: 34em
+    +split-bd(0 1px 0 1px, solid, mix($base, $sub, 50))
+
+  .result-json
+    margin: -1.7em 0 0 4em
+
+
+=footer
+  #footer
+    +user-select
+    padding-left: 6.3em
+    margin-top: 2em
+
+  .copylight
+    margin-left: 3.3em
+
+=help
+  .help
+    font-size: .8em
+    margin-left: 3.3em
+
+  .help-dt
+    &:before
+      content: '? '
+      color: $accent
+  .help-dd
+    margin-left: 2.1em
+
+=sc
+  .sc-ul
+    +clearfix
+    list-style: none
+    display: inline-block
+
+  .sc-li
+    // float: left
+
+  .sc-dl
+    +clearfix
+    font-size: .8em
+    width: 13em
+
+  .sc-key
+    display: inline-block
+    padding: .2em .4em
+
+  .sc-dt
+    display: inline-block
+    background: mix($base, $sub, 85)
+    border-radius: 2px
+    float: left
+
+  .sc-dd
+    margin-left: 0
+    text-indent: .75em
+
+
++rf
++layer
++layout
++tab
++main
++json
++result
++footer
++help
++sc
